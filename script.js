@@ -44,8 +44,9 @@ async function fetchProducts(response) {
                       <p><strong>Price :</strong> $ ${price} </p>
                       <div class="product-card-buttons">
 
-                      <button class="product-card-button1 btn btn-primary" id="add"href="#!" value="${ID}" onclick="add(this)">Add</button>
-                      <button class="product-card-button2 btn btn-warning"id="remove" href="#!" value="${ID}" onclick="remove(this)">Remove</button>
+                      <button class=" btn btn-primary" id="add"href="#!" value="${ID}" onclick="add(this)">Add</button>
+                      <button class=" btn btn-warning"id="remove" href="#!" value="${ID}" onclick="remove(this)">Remove</button>
+                      <button class=" btn btn-danger"id="remove" href="#feedback" value="${ID}"onclick="click(this)"><i class="fa fa-message"></i></button>
                   </div>
                  </div>`;
     }
