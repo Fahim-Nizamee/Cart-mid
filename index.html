@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Mart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c5b3ef347b.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body id="home">
+    <Header>
+        <nav class="fixed-top">
+            <p class="header-logo"><span class="logo-first text-danger">Q</span>uick Mart</p>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#review">Review</a></li>
+                <li><a href="#footer">About us</a></li>
+                <li><a href="#footer">Contact us</a></li>
+            </ul>
+        </nav>
+    </Header>
+    <br>
+    <br>
+    <section class="slider">
+        <div class="slider-container shadow">
+            <div class="slider-images">
+                <img src="images/111.jpg" alt="Image 1">
+                <img src="images/2.jpg" alt="Image 2">
+                <img src="images/3.jpg" alt="Image 3">
+            </div>
+        </div>
+    </section>
+    <br>
+    <section id="service" class="service-container shadow">
+        <div class="service">
+            <div class="service-card">
+                <div class="service-card-insider">
+                    <ul>
+                        <li><i class="fa fa-cart-shopping" style="font-size: 50px;"></i> <a href="#!"><span>M</span>y
+                                Cart</a></li>
+                    </ul>
+                    <div class="cart shadow">
+                        <ul>
+                            <div class="cart-details">
+                                <div>Total Products:</div>
+                                <div id="totalProducts"> 0</div>
+                            </div>
+                            <div class="cart-details">
+                                <div>Price:</div>
+                                <div id="price">$ 0</div>
+                            </div>
+                            <div class="cart-details">
+                                <div>Delivery Charge:</div>
+                                <div id="deliveryCharge">$ 0</div>
+                            </div>
+                            <div class="cart-details">
+                                <div>Shipping Cost:</div>
+                                <div id="shippingCost">$ 0</div>
+                            </div>
+                            <div class="cart-details">
+                                <div>Total Price:</div>
+                                <div id="totalPrice">$ 0</div>
+                            </div>
+                            <div class="cart-details">
+                                <div>Tax(15%):</div>
+                                <div id="tax">$ 0</div>
+                            </div>
+                            <div class="cart-details">
+                                <div>Grand Total:</div>
+                                <div id="grandTotal">$ 0</div>
+                            </div>
+                            <div class="cart-details">
+                                <div>Discount(5%):</div>
+                                <div id="discount">$ 0</div>
+                            </div>
+                            <hr>
+                            <div class="cart-details">
+                                <div>Final Total: </div>
+                                <div id="finalTotal">$ 0</div>
+                            </div>
+                        </ul>
+                        <div>
+                            <button class="btn btn-success" href="#!">Order Now</button>
+                        </div>
+                        <div id="message" style="padding: 2rem; height: 30%; overflow: hidden;">
+                            <!-- <div class="message-success">
+                                <h1>👏 Order Successful</h1>
+                            </div> -->
+                            <!-- <div class="message-danger">
+                                <h1>⚠️ Order Unsuccessful</h1>
+                            </div> -->
+                            <!-- <div class="message-danger">
+                                <h1>⚠️ This product no more on cart</h1>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-product">
+                <div class="service-product-insider">
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section id="review" class="slider2">
+        <div class="slider-container shadow">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="review-card shadow ">
+                            <img src="https://raw.githubusercontent.com/Fahim-Nizamee/portfolio.github.io/master/img/qt.jpg" alt="">
+                            <hr>
+                            <h3 class="center-text">QT C++ Development</h3>
+                            <p>Our QT is designed to provide a comprehensive introduction to
+                              QT C++, including its syntax and programming concepts.</p>
+                          </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="review-card shadow ">
+                            <img src="https://raw.githubusercontent.com/Fahim-Nizamee/portfolio.github.io/master/img/qt.jpg" alt="">
+                            <hr>
+                            <h1 class="center-text">QT C++ Development</h1>
+                            <p>Our QT is designed to provide a comprehensive introduction to
+                              QT C++, including its syntax and programming concepts.</p>
+                          </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="review-card shadow ">
+                            <img src="https://raw.githubusercontent.com/Fahim-Nizamee/portfolio.github.io/master/img/qt.jpg" alt="">
+                            <hr>
+                            <h1 class="center-text">QT C++ Development</h1>
+                            <p>Our QT is designed to provide a comprehensive introduction to
+                              QT C++, including its syntax and programming concepts.</p>
+                          </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="footer bg-black">
+            <div class="about-us">
+                <h3>About us</h3>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, esse amet! Deleniti laborum, vel minima consectetur quibusdam quas vero nulla nisi aperiam dolore perspiciatis porro nihil dolor dolores voluptas culpa.
+            </div>
+            <div class="contact-us">
+                <h3>Contact us</h3>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
