@@ -157,7 +157,7 @@ nav ul li a:hover {
     height: 98.35vh;
     margin: 5px;
     border-radius: 25px;
-    border: solid 1px #575656;
+    border: solid 1px #ececec;
     overflow: hidden;
     display: flex;
 }
@@ -171,7 +171,7 @@ nav ul li a:hover {
 
 .service-product {
     height: 100vh;
-    background-color: #d6d4d4;
+    background-color: #ececec;
     width: 70%;
     overflow: hidden;
 }
@@ -193,7 +193,7 @@ nav ul li a:hover {
 
 .service-card-insider {
     height: 96.8vh;
-    border: solid 2px #d6d4d4;
+    border: solid 2px #ececec;
     margin: 5px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -226,7 +226,7 @@ nav ul li a:hover {
 
 .cart {
     height: 70vh;
-    background: #d6d4d4;
+    background: #ececec;
     width: 97%;
     border-radius: 10px;
     text-align: left;
@@ -270,7 +270,7 @@ nav ul li a:hover {
     border-top: none;
 } */
 .product-card {
-    height: 63vh;
+    height: 480px;
     width: 100%;
     background-color: #ffffff;
     border-radius: 5px;
@@ -279,16 +279,23 @@ nav ul li a:hover {
     overflow: hidden;
 }
 
+.product-card-img{
+    height: 190px;
+    overflow: hidden;
+}
+
 .product-card img {
     max-width: 100%;
-    border: 2px solid #383737;
+    border: 2px solid #ececec;
     overflow: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
 
 }
-
+.product-card-description{
+    height: 100px;
+    overflow: hidden;
+    overflow-y: auto;
+}
 .product-card-buttons {
     display: flex;
     justify-content: space-between;
@@ -326,7 +333,7 @@ nav ul li a:hover {
 
 }
 
-.message-success {
+/* .message-success {
     height: 100%;
     background: rgba(40, 167, 69, 0.7);
     margin: 1rem;
@@ -360,7 +367,7 @@ nav ul li a:hover {
 .message-danger h1 {
     font-family: system;
 
-}
+} */
 
 .slider2 {
     padding-left: 2%;
@@ -368,33 +375,19 @@ nav ul li a:hover {
     border-radius: 30px;
 }
 
-.footer {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem;
-    color: #d6d4d4;
-}
 
-.about-us {
-    width: 45%;
-}
-
-.contact-us {
-    width: 45%;
-}
 
 .review-card{
     width: 100%;
     height: 60vh;
-    background-color: #d6d4d4;
+    background-color: #ececec;
     display: flex;
     justify-content: space-between;
     
 }
 .review-card img {
     max-width: 100%;
-    border: 2px solid #383737;
+    border: 2px solid #ececec;
     overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
@@ -421,7 +414,7 @@ nav ul li a:hover {
     
 }
 .rev-product-img:hover{
-    height: 230px;
+    height: 220px;
     
 }
 .review div{
@@ -441,6 +434,121 @@ nav ul li a:hover {
     padding-right: 1rem;
 
 }
-/* .user-img img{
+
+.fa-star{
+    color: rgb(255, 166, 1);
+}
+
+
+.feedback{
+    height: 70vh;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border:solid 1px #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.feedback-review-card{
+    width: 100%;
+    height: 70vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
     
-} */
+}
+.feedback-review-card img {
+    max-width: 100%;
+    border: 2px solid #ffffff;
+    overflow: hidden;
+    border-radius: 5px;
+
+}
+.feedback-review-selcted-product{
+    width: 50%;
+     display: grid;
+    row-gap: 0%;
+    justify-items: center;
+    padding: 3rem;
+}
+
+
+.feedback-rev-product-img{
+    height: 200px;
+    transition: .5s;
+    
+}
+.feedback-rev-product-img:hover{
+    height: 220px;  
+}
+.feedback-review-selcted-product div{
+    text-align: center;
+    color: #000000;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-left: 1rem;
+}
+.feedback-user-review{
+    width: 50%;
+     background-color: #ffffff;
+     padding: 2rem;
+     display: grid;
+     align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.combo {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    color: #d6d4d4;
+}
+
+.about-us {
+    width: 45%;
+}
+
+.contact-us {
+    width: 45%;
+}
+.fa-facebook{
+    color: #4267B2;
+}
+.fa-instagram{
+    color: #d62976;
+}
+.fa-twitter{
+    color: #1DA1F2;
+}
+.fa-whatsapp{
+    color: #25D366
+    ;
+}
+.fa-envelope{
+    color: #EA4335;
+}
+.contact-us a{
+    text-decoration: none;
+    color: #d6d4d4;
+}
+
+footer{
+    text-align: center;
+    width: 100%;
+    background: #000000;
+    font-weight: 300;
+    position: absolute;
+    left: 0;
+  
+  }
+  

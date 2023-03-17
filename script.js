@@ -8,6 +8,7 @@ let tax = 0;
 let grandTotal = 0;
 let discount = 0;
 let finalTotal = 0;
+let reviewID = 0;
 
 const pair = [];
 
@@ -28,27 +29,29 @@ async function fetchProducts(response) {
     for (let i = 3; i < response.length; i++) {
         let description = response[i].description;
         let title = response[i].title;
-        let image = response[i].images;
+        let image = response[i].images[2];
         let price = response[i].price;
         let ID = response[i].id;
         products.innerHTML += `<div class="product-card shadow">
-                     <img src="${image}"
-                         alt="">
-                     <hr>
-                     <h4>${title.length > 18 ? title.substring(0, 16) : title
+        <div class="product-card-img">
+            <img src="${image}" alt="">
+        </div>
+        <hr>
+        <h4>${title.length > 18 ? title.substring(0, 16) : title
             }</h4>
-                     <p>${description.length > 70
-                ? description.substring(0, 70).concat(' ...')
-                : description
-            }</p>
-                      <p><strong>Price :</strong> $ ${price} </p>
-                      <div class="product-card-buttons">
+        <div class="product-card-description">
+            <p>${description}</p>
+        </div>
+        <p><strong>Price :</strong> $ ${price} </p>
+        <div class="product-card-buttons">
 
-                      <button class=" btn btn-primary" id="add"href="#!" value="${ID}" onclick="add(this)">Add</button>
-                      <button class=" btn btn-warning"id="remove" href="#!" value="${ID}" onclick="remove(this)">Remove</button>
-                      <button class=" btn btn-danger"id="remove" href="#feedback" value="${ID}"onclick="click(this)"><i class="fa fa-message"></i></button>
-                  </div>
-                 </div>`;
+            <button class=" btn btn-outline-primary shadow" id="add" href="#!" value="${ID}"
+                onclick="add(this)">Add</button>
+            <button class=" btn btn-outline-warning shadow" id="remove" href="#!" value="${ID}"
+                onclick="remove(this)">Remove</button>
+            <a class=" btn btn-outline-danger shadow" href="#feedback" onclick="review('${ID}')"><i class="fa fa-message"></i></a>
+        </div>
+    </div>`;
     }
 
 }
@@ -93,7 +96,7 @@ function calculate() {
 }
 
 function add(val1) {
-    var x = parseFloat(val1.value);
+    var x = parseInt(val1.value);
     for (let i = 3; i < allProduct.length; i++) {
         if (allProduct[i].id == x) {
             price += allProduct[i].price;
@@ -105,14 +108,16 @@ function add(val1) {
             pair[i][1] = parseInt(pair[i][1]) + 1;
         }
     }
+    document.getElementById('message').innerHTML = `<div class="alert alert-success" role="alert">
+        ⚠️ Product added in cart
+    </div>`
     calculate();
 
 }
 
 
 function remove(val2) {
-    var x = parseFloat(val2.value);
-    var f = 0;
+    var x = parseInt(val2.value);
     var dPrice = 0;
     for (let i = 1; i < allProduct.length; i++) {
         if (allProduct[i].id == x) {
@@ -126,9 +131,42 @@ function remove(val2) {
                 pair[i][1] = parseInt(pair[i][1]) - 1;
                 price = price - dPrice;
             }
+            else {
+                document.getElementById('message').innerHTML = `<div class="alert alert-danger" role="alert">
+            ⚠️ This product absent in cart
+        </div>`
+            }
             // pair[i][1] = parseInt(pair[i][1]) + 1;
         }
+
     }
     calculate()
 
+}
+
+function order() {
+    console.log("clicked")
+    if (totalProducts != 0) {
+        document.getElementById('message').innerHTML = `<div class="alert alert-success" role="alert">
+        👏 Order Successful
+    </div>`
+    }
+    else {
+        document.getElementById('message').innerHTML = ""
+    }
+    document.getElementById('totalProducts').innerHTML = 0;
+    document.getElementById('price').innerHTML = '$ ' + 0;
+    document.getElementById('deliveryCharge').innerHTML = '$ ' + 0;
+    document.getElementById('shippingCost').innerHTML = '$ ' + 0;
+    document.getElementById('totalPrice').innerHTML = '$ ' + 0;
+    document.getElementById('tax').innerHTML = '$ ' + 0;
+    document.getElementById('grandTotal').innerHTML = '$ ' + 0;
+    document.getElementById('discount').innerHTML = '$ ' + 0;
+    document.getElementById('finalTotal').innerHTML = '$ ' + 0;
+}
+
+function review(val3)
+{
+    // reviewID = val3.value;
+    console.log(val3)
 }
