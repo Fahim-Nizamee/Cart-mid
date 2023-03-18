@@ -9,6 +9,9 @@ let grandTotal = 0;
 let discount = 0;
 let finalTotal = 0;
 let reviewID = 0;
+let reviewImg;
+let reviewDes;
+let reviewTitle;
 
 const pair = [];
 
@@ -49,7 +52,7 @@ async function fetchProducts(response) {
                 onclick="add(this)">Add</button>
             <button class=" btn btn-outline-warning shadow" id="remove" href="#!" value="${ID}"
                 onclick="remove(this)">Remove</button>
-            <a class=" btn btn-outline-danger shadow" href="#feedback" onclick="review('${ID}')"><i class="fa fa-message"></i></a>
+            <a class=" btn btn-outline-danger shadow" href="#feedback" onclick="review('${ID}','${image}')"><i class="fa fa-message"></i></a>
         </div>
     </div>`;
     }
@@ -165,8 +168,75 @@ function order() {
     document.getElementById('finalTotal').innerHTML = '$ ' + 0;
 }
 
-function review(val3)
-{
-    // reviewID = val3.value;
-    console.log(val3)
+function review(val3, img) {
+    reviewID = val3;
+    reviewImg = img;
+
+    for (var i = 0; i < allProduct.length; i++) {
+        if (allProduct[i].id == reviewID) {
+            document.getElementById('review-product-title').innerHTML = allProduct[i].title;
+            document.getElementById('review-product-img').innerHTML = `<img class="feedback-rev-product-img shadow"  src="${img}" alt=""></img>`;
+            document.getElementById('review-product-description').innerHTML = allProduct[i].description;
+            reviewTitle = allProduct[i].title;
+            reviewDes = allProduct[i].description;
+        }
+    }
+    console.log(reviewID);
+}
+
+function submit() {
+    if (reviewID != 0) {
+        var name = document.getElementById('customer-name').value;
+        var rating = document.getElementById('product-rating').value;
+        var Review = document.getElementById('customer-review').value;
+        console.log(name)
+        console.log(rating)
+        console.log(Review)
+        var Ratings = '';
+        for (var i = 0; i < rating; i++) {
+            Ratings += '<i class="fa fa-star" style="font-size: 30px;"></i>';
+        }
+        var slider = document.getElementById('review-slider');
+        slider.innerHTML += `<div class="carousel-item active">
+        <div class="review-card shadow ">
+            <div class="review">
+                <img class="rev-product-img shadow" src="${reviewImg}" alt="">
+                <div>
+                    <h3>${reviewTitle}</h3>
+                    <div class="rev-product-description">
+                        <p>${reviewDes}</p>
+                    </div>
+                </div>
+                <a href="#!">${Ratings}</a>
+
+            </div>
+            <div class="review">
+                <div class="user-img shadow">
+                    <i class="fa fa-user" style="font-size: 150px;"></i>
+                </div>
+                <div>
+                    <h3>${name}</h3>
+                    <div class="rev-product-description">
+                        <p>${Review}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`
+    }
+    document.getElementById('review-product-title').innerHTML = '';
+    document.getElementById('review-product-img').innerHTML = '';
+    document.getElementById('review-product-description').innerHTML = '';
+    document.getElementById('customer-name').value = '';
+    document.getElementById('product-rating').innerHTML = `<option value="5">5</option>
+    <option value="4">4</option>
+    <option value="3">3</option>
+    <option value="2">2</option>
+    <option value="1">1</option>`;
+    document.getElementById('customer-review').value = '';
+    reviewID = 0;
+    reviewImg = '';
+    reviewDes = '';
+    reviewTitle = '';
+
 }

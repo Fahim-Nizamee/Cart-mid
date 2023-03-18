@@ -10,7 +10,6 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    /* background-color: #ffa16c; */
 
 }
 
@@ -25,8 +24,6 @@
 
 body {
     padding-top: 4rem;
-    /* background: #ffa16c;
-    color: #000000; */
 }
 
 nav {
@@ -42,7 +39,7 @@ nav {
     padding-left: 2rem;
     padding-right: 2rem;
     border-bottom: solid 1px black;
-
+    height: 5rem;
 
 }
 
@@ -240,35 +237,6 @@ nav ul li a:hover {
     display: grid;
     justify-items: center;
 }
-
-/* .cart div a{
-    text-decoration: none;
-    height: 32px;
-    width: 150px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    background: #ffa16c;
-    border-left:solid 1px #8f8f8f;
-    border-top: solid 1px #8f8f8f;
-    border-bottom: none;
-    border-right: none;
-
-}
-.cart div a:hover{
-    border: solid 1px #020202;
-    height: 32px;
-    width: 150px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    background: #ffa16c;
-    transition: 0.3s;
-    border-bottom:solid 1px #6e6e6e;
-    border-right: solid 1px #6e6e6e;
-    border-left: none;
-    border-top: none;
-} */
 .product-card {
     height: 480px;
     width: 100%;
@@ -303,71 +271,11 @@ nav ul li a:hover {
     padding-right: 2rem;
 }
 
-/* .product-card-button1 {
-    width: 100px;
-} */
-
-/* .product-card-button1:hover{
-    text-decoration: none;
-    transition: 0.5s;
-    border-bottom:solid 1px #6e6e6e;
-    border-right: solid 1px #6e6e6e;
-    border-left: none;
-    border-top: none;
-  } */
-/* .product-card-button2 {
-    width: 100px;
-} */
-
-/* .product-card-button2:hover{
-    text-decoration: none;
-    transition: 0.5s;
-    border-bottom:solid 1px #6e6e6e;
-    border-right: solid 1px #6e6e6e;
-    border-left: none;
-    border-top: none;
-  } */
 .cart-details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
 }
-
-/* .message-success {
-    height: 100%;
-    background: rgba(40, 167, 69, 0.7);
-    margin: 1rem;
-    border-radius: 5px;
-    align-items: center;
-    border-right: solid 2px white;
-    border-bottom: solid 2px white;
-    text-align: center;
-
-
-}
-
-.message-success h1 {
-    font-family: system;
-
-}
-
-.message-danger {
-    height: 100%;
-    background: rgba(220, 53, 69, 0.7);
-    margin: 1rem;
-    border-radius: 5px;
-    align-items: center;
-    border-right: solid 2px white;
-    border-bottom: solid 2px white;
-    text-align: center;
-
-
-}
-
-.message-danger h1 {
-    font-family: system;
-
-} */
 
 .slider2 {
     padding-left: 2%;
@@ -437,6 +345,13 @@ nav ul li a:hover {
 
 .fa-star{
     color: rgb(255, 166, 1);
+    transition: 0.5s;
+    font-size: 30px;
+    
+}
+.fa-star:hover{
+    color: rgb(233, 158, 19);
+    font-size: 40px;
 }
 
 
@@ -494,15 +409,6 @@ nav ul li a:hover {
      display: grid;
      align-items: center;
 }
-
-
-
-
-
-
-
-
-
 
 
 
