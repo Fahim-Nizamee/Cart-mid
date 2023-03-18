@@ -139,7 +139,6 @@ function remove(val2) {
             ⚠️ This product absent in cart
         </div>`
             }
-            // pair[i][1] = parseInt(pair[i][1]) + 1;
         }
 
     }
