@@ -2,7 +2,7 @@ let allProduct;
 let totalProducts = 0;
 let price = 0;
 let deliveryCharge = 10;
-let shippingCost = 10;
+let shippingCost = 8;
 let totalPrice = 0;
 let tax = 0;
 let grandTotal = 0;
@@ -36,7 +36,7 @@ async function fetchProducts(response) {
         let price = response[i].price;
         let ID = response[i].id;
         products.innerHTML += `<div class="product-card shadow">
-        <div class="product-card-img">
+        <div class="product-card-img shadow">
             <img src="${image}" alt="">
         </div>
         <hr>
@@ -59,6 +59,10 @@ async function fetchProducts(response) {
 
 }
 searchProducts()
+function successfull()
+{
+    document.getElementById('message').innerHTML =' ';
+}
 
 function calculate() {
     var t = 0;
@@ -112,9 +116,10 @@ function add(val1) {
         }
     }
     document.getElementById('message').innerHTML = `<div class="alert alert-success" role="alert">
-        ⚠️ Product added in cart
+        Product added in cart
     </div>`
     calculate();
+    setTimeout(successfull,2000);
 
 }
 
@@ -143,6 +148,7 @@ function remove(val2) {
 
     }
     calculate()
+    setTimeout(successfull,2000);
 
 }
 
@@ -165,6 +171,20 @@ function order() {
     document.getElementById('grandTotal').innerHTML = '$ ' + 0;
     document.getElementById('discount').innerHTML = '$ ' + 0;
     document.getElementById('finalTotal').innerHTML = '$ ' + 0;
+    totalProducts = 0;
+    price = 0;
+    deliveryCharge = 10;
+    shippingCost = 10;
+    totalPrice = 0;
+    tax = 0;
+    grandTotal = 0;
+    discount = 0;
+    finalTotal = 0;
+    for (let i = 0; i < pair.length; i++)
+    {
+        pair[i][1]=0;
+    }
+    setTimeout(successfull,2000);
 }
 
 function review(val3, img) {
@@ -196,7 +216,7 @@ function submit() {
             Ratings += '<i class="fa fa-star" style="font-size: 30px;"></i>';
         }
         var slider = document.getElementById('review-slider');
-        slider.innerHTML += `<div class="carousel-item active">
+        slider.innerHTML += `<div class="carousel-item " data-bs-interval="3000">
         <div class="review-card shadow ">
             <div class="review">
                 <img class="rev-product-img shadow" src="${reviewImg}" alt="">
