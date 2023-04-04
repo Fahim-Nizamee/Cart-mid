@@ -38,6 +38,7 @@ async function fetchProducts(response) {
         products.innerHTML += `<div class="product-card shadow">
         <div class="product-card-img shadow">
             <img src="${image}" alt="">
+            <span class="counter " id="${ID}">0</span>
         </div>
         <hr>
         <h4>${title.length > 18 ? title.substring(0, 16) : title
@@ -59,9 +60,8 @@ async function fetchProducts(response) {
 
 }
 searchProducts()
-function successfull()
-{
-    document.getElementById('message').innerHTML =' ';
+function successfull() {
+    document.getElementById('message').innerHTML = ' ';
 }
 
 function calculate() {
@@ -113,13 +113,16 @@ function add(val1) {
     for (let i = 0; i < pair.length; i++) {
         if (pair[i][0] == x) {
             pair[i][1] = parseInt(pair[i][1]) + 1;
+            var cnt = document.getElementById(x)
+            cnt.style.display = 'block'
+            cnt.innerText = pair[i][1]
         }
     }
     document.getElementById('message').innerHTML = `<div class="alert alert-success" role="alert">
         Product added in cart
     </div>`
     calculate();
-    setTimeout(successfull,2000);
+    setTimeout(successfull, 2000);
 
 }
 
@@ -127,6 +130,7 @@ function add(val1) {
 function remove(val2) {
     var x = parseInt(val2.value);
     var dPrice = 0;
+    var cnt = document.getElementById(x)
     for (let i = 1; i < allProduct.length; i++) {
         if (allProduct[i].id == x) {
             dPrice = allProduct[i].price;
@@ -138,17 +142,24 @@ function remove(val2) {
             if (pair[i][1] > 0) {
                 pair[i][1] = parseInt(pair[i][1]) - 1;
                 price = price - dPrice;
+
+                cnt.style.display = 'block'
+                cnt.innerText = pair[i][1]
             }
             else {
                 document.getElementById('message').innerHTML = `<div class="alert alert-danger" role="alert">
             ⚠️ This product absent in cart
         </div>`
+
             }
         }
 
     }
+    if (cnt.innerText == 0) {
+        cnt.style.display = 'none'
+    }
     calculate()
-    setTimeout(successfull,2000);
+    setTimeout(successfull, 2000);
 
 }
 
@@ -180,11 +191,10 @@ function order() {
     grandTotal = 0;
     discount = 0;
     finalTotal = 0;
-    for (let i = 0; i < pair.length; i++)
-    {
-        pair[i][1]=0;
+    for (let i = 0; i < pair.length; i++) {
+        pair[i][1] = 0;
     }
-    setTimeout(successfull,2000);
+    setTimeout(successfull, 2000);
 }
 
 function review(val3, img) {

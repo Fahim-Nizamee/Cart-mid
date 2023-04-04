@@ -265,13 +265,13 @@ nav ul li a:hover {
 
 }
 .product-card {
+    position: relative;
     height: 480px;
     width: 100%;
     background-color: #ffffff;
     border-radius: 10px;
     border: solid 1px #e0e0e0;
     padding: 10px;
-    overflow: hidden;
 }
 
 .product-card-img {
@@ -513,4 +513,20 @@ footer {
 .quickmart{
     font-family: 'Lobster', cursive;
     font-size: 20px;
+}
+.counter {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: #ffffff solid 0.5px;
+    background-color: rgb(255, 25, 17);
+    color: #fff;
+    
+    line-height: 35px;
+    text-align: center;
+
 }
