@@ -38,7 +38,7 @@ async function fetchProducts(response) {
         products.innerHTML += `<div class="product-card shadow">
         <div class="product-card-img shadow">
             <img src="${image}" alt="">
-            <span class="counter " id="${ID}">0</span>
+            <span class="counter shadow" id="${ID}">0</span>
         </div>
         <hr>
         <h4>${title.length > 18 ? title.substring(0, 16) : title
